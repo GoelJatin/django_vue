@@ -13,7 +13,7 @@ services:
     env_file: .env.development
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "3030:3000"
     volumes:
