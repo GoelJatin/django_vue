@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:11
+    env_file: .env.development
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "${VENDOR_DOCKER_POSTGRES_PORT:-54432}:5432"
+  web:
+    image: django-vue
+    env_file: .env.development
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3030:3000"
+    volumes:
+      - .:/app
+
+volumes:
+  pgdata:
