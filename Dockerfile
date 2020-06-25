@@ -20,14 +20,13 @@ RUN set -eux; \
 
 WORKDIR /src
 
-COPY Pipfile Pipfile.lock ./
+COPY Pipfile Pipfile.lock src ./
 
 RUN pipenv install
+RUN pipenv run python manage.py migrate
 
 ENV BIND_ADDR 0.0.0.0
 
 EXPOSE 8000
 
-COPY ./src .
-
-CMD [ "python", "manage.py", "runserver" ]
+CMD [ "pipenv", "run", "python", "manage.py", "runserver" ]
