@@ -11,10 +11,10 @@ RUN set -eux; \
     nodejs; \
     pip install --no-cache-dir pipenv; \
     npm install -g @vue/cli; \
-    # npm install; \
-    # npm install --save auth0-js \
-    # eventemitter3 \
-    # axios; \
+    npm install; \
+    npm install --save auth0-js \
+    eventemitter3 \
+    axios; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
