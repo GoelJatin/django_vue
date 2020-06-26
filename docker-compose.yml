@@ -7,7 +7,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - "${VENDOR_DOCKER_POSTGRES_PORT:-54432}:5432"
+      - "${DOCKER_POSTGRES_PORT:-54432}:5432"
   web:
     image: django-vue
     env_file: .env.development
@@ -17,7 +17,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./src/djangovue:/src/djangovue
 
 volumes:
+  src:
   pgdata:
