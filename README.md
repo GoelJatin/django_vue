@@ -10,3 +10,7 @@ I'll have some good understanding about both the technologies
 Along the way we'll try to do the entire development inside Docker containers to learn another super amazing tech
 
 More to come...
+
+Note to self - Had a weird observation, even after exposing the port from the docker container, binding 0.0.0.0 addr, still was not able to connect to the app from the host machine
+
+Had the add `0.0.0.0:8000` to the runserver command to be able to access it..
