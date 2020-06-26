@@ -27,8 +27,4 @@ RUN pipenv install
 COPY src ./
 RUN pipenv run python manage.py migrate
 
-ENV BIND_ADDR 0.0.0.0
-
-EXPOSE 8000
-
 CMD [ "pipenv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000" ]
