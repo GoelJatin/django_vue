@@ -5,3 +5,4 @@ lib/
 .python-version
 pyvenv.cfg
 Dockerfile.dev
+src/db.sqlite3
