@@ -8,12 +8,12 @@ services:
       - pgdata:/var/lib/postgresql/data
     ports:
       - "${DOCKER_POSTGRES_PORT:-54432}:5432"
-  web:
+  django:
     image: django-vue
     env_file: .env.development
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.django
     ports:
       - "8000:8000"
     volumes:
