@@ -14,3 +14,7 @@ More to come...
 Note to self - Had a weird observation, even after exposing the port from the docker container, binding 0.0.0.0 addr, still was not able to connect to the app from the host machine
 
 Had the add `0.0.0.0:8000` to the runserver command to be able to access it..
+
+**Result** - Alright so after discussion in the `DSUGHyd` channel, it's clear when we run the server without `addrport` it runs inside the docker container localhost and hence does not allow connections from outside.
+
+To run the Django server inside the docker container, we've to bind it ourselves to accept connections from all hosts and hence add the `addport` - `0.0.0.0:8000` to the *runserver* command
