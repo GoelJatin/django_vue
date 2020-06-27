@@ -20,7 +20,7 @@ RUN set -eux; \
 
 WORKDIR /src
 
-COPY Pipfile Pipfile.lock ./
+COPY src/Pipfile src/Pipfile.lock ./
 
 RUN pipenv install
 
