@@ -4,3 +4,4 @@ lib/
 .env.development
 .python-version
 pyvenv.cfg
+Dockerfile.dev
