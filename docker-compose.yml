@@ -17,7 +17,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./src/djangovue:/src/djangovue
+      - ./src:/src
 
 volumes:
   src:
