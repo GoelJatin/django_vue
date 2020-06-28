@@ -16,4 +16,6 @@ RUN pipenv install
 
 COPY src/djangovue ./djangovue/
 
+COPY src/startup.sh ./
+
 CMD [ "bash", "startup.sh" ]
