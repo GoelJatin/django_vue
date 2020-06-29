@@ -1,9 +1,17 @@
 FROM node:lts-alpine
 
-WORKDIR /src
+EXPOSE 8080
 
-COPY src/frontend/package*.json ./
+WORKDIR /app
 
-RUN npm install
+COPY src/vue/frontend/package*.json ./
 
-CMD [ "npm", "run", "dev" ]
+RUN set -eux; \
+    npm install; \
+    npm install -g http-server
+
+COPY src/vue/frontend ./
+
+RUN npm run build
+
+CMD [ "http-server", "dist" ]

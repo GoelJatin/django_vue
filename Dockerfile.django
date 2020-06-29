@@ -8,14 +8,14 @@ RUN set -eux; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /src
+EXPOSE 8000
 
-COPY src/Pipfile src/Pipfile.lock src/manage.py ./
+WORKDIR /app
+
+COPY src/django/Pipfile src/django/Pipfile.lock ./
 
 RUN pipenv install
 
-COPY src/djangovue ./djangovue/
-
-COPY src/startup.sh ./
+COPY src/django ./
 
 CMD [ "bash", "startup.sh" ]
