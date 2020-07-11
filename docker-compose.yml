@@ -18,7 +18,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - django:/app
+      - ./src/django:/app
 
   vue:
     image: vue
@@ -29,11 +29,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - vue:/app/frontend
-      - vue-node_modules:/app/frontend/node_modules
+      - ./src/vue:/app/frontend
+      - ./src/vue/node_modules:/app/frontend/node_modules
 
 volumes:
   pgdata:
-  django:
-  vue:
-  vue-node_modules:
