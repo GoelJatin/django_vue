@@ -32,3 +32,10 @@ Now let's start adding the front-end Vue app, which again as our Django app, we'
 Both our Django and Vue apps are running successfully in their own containers. Now let's go ahead and start adding the integration with Auth0
 
 <https://auth0.com/blog/building-modern-applications-with-django-and-vuejs/#Creating-an-Auth0-API>
+
+### Update - Jul 12
+
+Learned another thing about Docker volumes, you need to mount your code directory as a volume on the docker container to be able to share data b/w
+host and container.
+
+Using named volumes does not work for local development
