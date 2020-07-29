@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'catalog',
     'rest_framework',
     'rest_framework_jwt',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
 
 ROOT_URLCONF = 'djangovue.urls'
@@ -170,3 +173,7 @@ JWT_AUTH = {
     'JWT_ISSUER': JWT_ISSUER,
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
 }
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8080',
+)
